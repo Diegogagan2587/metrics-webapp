@@ -7,12 +7,20 @@ import DetailsPage from './components/DetailsPage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getWeatherAsync } from './redux/home/homeSlice';
+import {useSelector} from 'react-redux';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getWeatherAsync());
   },[useDispatch])
+
+  const statesInCountry = useSelector((state) => state.weather.mexico.states);
+  statesInCountry.forEach(state => {
+    const {latitude, longitude} = state;
+    dispatch(getWeatherAsync({latitude,longitude}));
+  });
+
   return (
     <>
       <NavigationBar />
