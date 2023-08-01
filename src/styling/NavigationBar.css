@@ -1,0 +1,15 @@
+.active-link {
+    border: green 1px solid;
+}
+
+nav {
+    border: solid 1px green;
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+}
+
