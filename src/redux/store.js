@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { homeReducer } from './home/homeSlice';
+import weatherReducer from './home/homeSlice'
 
 const store = configureStore({
   reducer: {
-    home: homeReducer,
+    weather: weatherReducer,
+    another: [],
   },
 });
 
