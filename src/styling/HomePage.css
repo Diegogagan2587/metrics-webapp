@@ -1,0 +1,21 @@
+.continent {
+    display: flex;
+    gap: 5%;
+}
+
+.continent img {
+    width: 45%;
+}
+
+.continent .cont-header{
+    width: 45%;
+}
+
+.countries-ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.countries-ul .country {
+    flex-basis: 50%;
+}
