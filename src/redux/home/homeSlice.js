@@ -55,8 +55,22 @@ const weatherSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getWeatherAsync.fulfilled, (state, action) => {
-      console.log('action--->', action);
-      //state.countries.mexico.states.villahermosa.data = action.payload;
+      console.log('action--->', action.payload);
+      const newState = [];
+
+      state.mexico.states.forEach((city) => {
+        const { latitude, longitude } = city;
+        const { lat, lon } = action.payload.coord;
+        const data = action.payload.list;
+        if (latitude === lat && longitude === lon) {
+          newState.push({ ...city, data });
+        } else {
+          newState.push(city);
+        }
+      });
+
+      state.mexico.states.splice(0, state.mexico.states.length, ...newState);
+
     });
   },
 });
