@@ -1,48 +1,36 @@
 import '../styling/HomePage.css';
+import { useSelector } from 'react-redux';
 
 const continentsURL =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Continental_models-Australia.gif/1280px-Continental_models-Australia.gif';
 
 const HomePage = () => {
+  const statesInCountry = useSelector((state) => state.weather.mexico.states);
+  console.log(
+    'accesing to the store from within HomePage---->',
+    statesInCountry
+  );
   return (
     <>
-      <div>
-        <h1>Place holder for the home page</h1>
-      </div>
       <section className="continent">
         <img src={continentsURL} alt="continents picture" />
         <div className="cont-header">
-          <h1>Europe</h1>
+          <h1>Mexico</h1>
           <span>6958 views</span>
         </div>
       </section>
       <section className="countries-section">
-        <h2>STATS BY COUNTRY</h2>
+        <h2>STATS BY CITY</h2>
         <ul className="countries-ul">
-          <li className="country">
-            <h3>Czech Republic</h3>
-            <span>954</span>
-          </li>
-          <li className="country">
-            <h3>Italy</h3>
-            <span>954</span>
-          </li>
-          <li className="country">
-            <h3>Croatia</h3>
-            <span>954</span>
-          </li>
-          <li className="country">
-            <h3>Denmark</h3>
-            <span>954</span>
-          </li>
-          <li className="country">
-            <h3>Spain</h3>
-            <span>954</span>
-          </li>
-          <li className="country">
-            <h3>Any other in europe</h3>
-            <span>954</span>
-          </li>
+          {statesInCountry.map((state) => {
+            const { latitude, longitude } = state;
+            return (
+              <li key={state.state} className="country">
+                <h3>{state.state}</h3>
+                <span>{`coordinates: Lat ${latitude}, Long ${longitude}`}</span>
+              </li>
+            );
+          })}
         </ul>
       </section>
     </>
