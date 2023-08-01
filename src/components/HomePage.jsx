@@ -1,5 +1,6 @@
 import '../styling/HomePage.css';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const continentsURL =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Continental_models-Australia.gif/1280px-Continental_models-Australia.gif';
@@ -26,8 +27,10 @@ const HomePage = () => {
             const { latitude, longitude } = state;
             return (
               <li key={state.state} className="country">
-                <h3>{state.state}</h3>
-                <span>{`coordinates: Lat ${latitude}, Long ${longitude}`}</span>
+                <NavLink to="/details">
+                  <h3>{state.state}</h3>
+                  <span>{`coordinates: Lat ${latitude}, Long ${longitude}`}</span>
+                </NavLink>
               </li>
             );
           })}
