@@ -11,22 +11,6 @@ const NavigationBar = () => {
         </li>
         <li>most views</li>
         <li>
-          <NavLink
-            to="/home"
-            className={({isActive}) => (isActive ? 'active-link' : '')}
-          >
-            TestHomePage
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/details"
-            className={({isActive}) => (isActive ? 'active-link' : '')}
-          >
-            TestDetailsPage
-          </NavLink>
-        </li>
-        <li>
           <button>
             <AiTwotoneSetting />
           </button>
