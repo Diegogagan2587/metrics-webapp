@@ -5,6 +5,7 @@
 nav {
   border: solid 1px green;
   display: flex;
+  width: 100%;
 }
 
 nav ul {
@@ -12,4 +13,13 @@ nav ul {
   gap: 5px;
   width: 100%;
   justify-content: space-between;
+}
+
+nav ul button {
+  padding: 0;
+}
+
+nav ul .go-back {
+  font-weight: bold;
+  
 }
