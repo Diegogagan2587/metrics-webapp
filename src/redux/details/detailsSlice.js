@@ -7,7 +7,12 @@ const initialState = [{
 const detailsSlice = createSlice({
     name: 'details',
     initialState,
-    reducers: {},
+    reducers: {
+        updateSelected: (state, action) => {
+
+        }
+    },
 });
 
+export const { updateSelected } = detailsSlice.actions;
 export default detailsSlice.reducer;
