@@ -2,6 +2,7 @@ import '../styling/HomePage.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { updateSelected } from '../redux/details/detailsSlice';
+import map_mexico from '../assets/map_mexico.png'
 
 const continentsURL =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Continental_models-Australia.gif/1280px-Continental_models-Australia.gif';
@@ -18,7 +19,7 @@ const HomePage = () => {
   return (
     <>
       <section className="continent">
-        <img src={continentsURL} alt="continents picture" />
+        <img src={map_mexico} alt="continents picture" />
         <div className="cont-header">
           <h1>Mexico</h1>
           <span>6958 views</span>
