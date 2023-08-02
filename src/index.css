@@ -1,7 +1,10 @@
 /* General Styling here */
+/* Background color: #e04484 */
 
 * {
   box-sizing: border-box;
+  background-color: #e04484;
+  color: whitesmoke;
 }
 
 ul {
@@ -15,4 +18,8 @@ li {
 a{
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  border:0;
 }
