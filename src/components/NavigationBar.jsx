@@ -7,7 +7,7 @@ const NavigationBar = () => {
     <nav>
       <ul>
         <li>
-          <button>{'<'}</button> <span>2015</span>
+          <button><NavLink to="./home">{'<'}</NavLink></button> <span>2015</span>
         </li>
         <li>most views</li>
         <li>
