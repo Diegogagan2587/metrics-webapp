@@ -55,7 +55,6 @@ const weatherSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getWeatherAsync.fulfilled, (state, action) => {
-      console.log('action--->', action.payload);
       const newState = [];
 
       state.mexico.states.forEach((city) => {
