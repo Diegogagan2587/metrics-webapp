@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [{
-    selected: null,
+    selected: "",
 }];
 
 const detailsSlice = createSlice({
@@ -9,7 +9,10 @@ const detailsSlice = createSlice({
     initialState,
     reducers: {
         updateSelected: (state, action) => {
-
+            console.log('runing within updateSelected reducer-----')
+            console.log('action',action.payload)
+            const newCity = action.payload;
+            state[0].selected = action.payload;
         }
     },
 });
