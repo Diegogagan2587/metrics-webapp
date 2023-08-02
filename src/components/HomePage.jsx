@@ -11,8 +11,8 @@ const HomePage = () => {
   const statesInCountry = useSelector((state) => state.weather.mexico.states);
 
   const eventHandler = (event) => {
-    console.log(event.target);
-    dispatch(updateSelected());
+    const city = event.target.innerText;
+    dispatch(updateSelected(city));
   };
 
   return (
