@@ -1,6 +1,7 @@
 import '../styling/HomePage.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { updateSelected } from '../redux/details/detailsSlice';
 
 const continentsURL =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Continental_models-Australia.gif/1280px-Continental_models-Australia.gif';
