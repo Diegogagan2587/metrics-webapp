@@ -7,10 +7,7 @@ const continentsURL =
 
 const HomePage = () => {
   const statesInCountry = useSelector((state) => state.weather.mexico.states);
-  console.log(
-    'accesing to the store from within HomePage---->',
-    statesInCountry
-  );
+
   return (
     <>
       <section className="continent">
