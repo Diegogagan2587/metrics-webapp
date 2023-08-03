@@ -1,16 +1,16 @@
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 const DetailsPage = () => {
   const cities = useSelector((state) => state.weather.mexico.states);
   const currentCity = useSelector((state)=>state.details[0].selected);
   const currentCityData = cities.filter((city)=>city.state===`${currentCity}`);
-  const { state:name, data } = currentCityData[0];
+  const { state:name, img} = currentCityData[0];
+  console.log('current city in details--->',currentCityData[0])
   const {components:polutionStats} = currentCityData[0].data[0];
   return (
     <div>
       <section className="continent">
-        <img src={'#'} alt="continents picture" />
+        <img src={img} alt="continents picture" />
         <div className="cont-header">
           <h1>{name}</h1>
           <span>6958 views</span>
