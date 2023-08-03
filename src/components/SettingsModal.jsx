@@ -1,5 +1,12 @@
 import '../styling/SettingsModal.css'
+import {useSelector, useDispatch } from 'react-redux';
+import { closeModal } from '../redux/navigation/navigationSlice';
 const SettingsModal = () => {
+    const dispatch = useDispatch();
+    const isModalOPen = useSelector((state)=>state.navigaton[0].isModalOpen)
+    const setCloseModal = ()=>{
+        dispatch(closeModal())
+    }
     const handleSubmit = (event)=>{
         event.preventDefault()
         console.log(event.target)
@@ -7,7 +14,7 @@ const SettingsModal = () => {
     return (
         <div className="modal-background hide">
             <div className='modal'>
-            <button className="close-mod">X</button>
+            <button className="close-mod" onClick={()=>setCloseModal()}>X</button>
             <form onSubmit={(event)=>handleSubmit(event)}>
                 <p>How many states do you want to display?</p>
                 <input type="text" name="modal-input" id="modal-input" />
