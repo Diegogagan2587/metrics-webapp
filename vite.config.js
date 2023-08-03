@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base:'/metrics-webapp/',
+  base:'https://diegogagan2587.github.io/metrics-webapp/',
 })
