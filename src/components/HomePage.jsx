@@ -2,6 +2,7 @@ import '../styling/HomePage.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { updateSelected } from '../redux/details/detailsSlice';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import map_mexico from '../assets/map_mexico.png'
 
 const continentsURL =
@@ -11,8 +12,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const statesInCountry = useSelector((state) => state.weather.mexico.states);
 
-  const eventHandler = (event) => {
-    const city = event.target.innerText;
+  const eventHandler = (city) => {
     dispatch(updateSelected(city));
   };
 
@@ -32,10 +32,14 @@ const HomePage = () => {
             const { latitude, longitude } = state;
             return (
               <li key={state.state} className="country">
-                <NavLink to="/details" onClick={eventHandler}>
-                  <h3>{state.state}</h3>
+                <NavLink to="/details" onClick={eventHandler(state.state)}>
+                  <BsArrowRightCircle />
                 </NavLink>
-                <span>{`coordinates: Lat ${latitude}, Long ${longitude}`}</span>
+                <img src={state.img} alt={state.imgAlt} />
+                <NavLink to="/details" onClick={eventHandler(state.state)}>
+                  <h3 className='city-name'>{state.state}</h3>
+                </NavLink>
+                <span>{`coords: Lat${latitude}, Long${longitude}`}</span>
               </li>
             );
           })}
