@@ -3,8 +3,12 @@
 
 * {
   box-sizing: border-box;
-  background-color: #e04484;
   color: whitesmoke;
+  margin: 0;
+}
+
+body{
+  background-color: #f04c8c; /*remove after finishing styling*/
 }
 
 ul {
@@ -15,11 +19,11 @@ li {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
 button {
-  border:0;
+  border: 0;
 }
