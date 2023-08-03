@@ -7,11 +7,13 @@
   align-items: center;
   gap: 5%;
   padding: 2.5%;
-  height: 45vmin;
+  min-height: 45vmin;
+  height: fit-content;
 }
 
 .state img {
-  width: 45%;
+  max-width: 45%;
+  max-height: 100%;
 }
 
 .state .state-header {
