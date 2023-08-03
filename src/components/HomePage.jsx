@@ -12,8 +12,8 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const statesInCountry = useSelector((state) => state.weather.mexico.states);
 
-  const eventHandler = (city) => {
-    dispatch(updateSelected(city));
+  const eventHandler = (cityName) => {
+    dispatch(updateSelected(cityName));
   };
 
   return (
@@ -29,15 +29,15 @@ const HomePage = () => {
         <h2>STATS BY CITY</h2>
         <ul className="countries-ul">
           {statesInCountry.map((state) => {
-            const { latitude, longitude } = state;
+            const { latitude, longitude, state:cityName} = state;
             return (
               <li key={state.state} className="country">
-                <NavLink to="/details" onClick={eventHandler(state.state)}>
+                <NavLink to="/details" onClick={()=>eventHandler(cityName)}>
                   <BsArrowRightCircle />
                 </NavLink>
                 <img src={state.img} alt={state.imgAlt} />
-                <NavLink to="/details" onClick={eventHandler(state.state)}>
-                  <h3 className='city-name'>{state.state}</h3>
+                <NavLink to="/details" onClick={()=>eventHandler(cityName)}>
+                  <h3 className='city-name'>{cityName}</h3>
                 </NavLink>
                 <span>{`coords: Lat${latitude}, Long${longitude}`}</span>
               </li>
