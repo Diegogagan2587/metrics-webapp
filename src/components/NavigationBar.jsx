@@ -8,7 +8,7 @@ const NavigationBar = () => {
     <nav>
       <ul>
         <li>
-          <button className='go-back'><NavLink to="./home"> <AiOutlineLeft /> </NavLink></button> <span>2015</span>
+          <button className='go-back'><NavLink to="./home"> <AiOutlineLeft /> </NavLink></button> <span>Now</span>
         </li>
         <li>most views</li>
         <li className='icons-right'>
