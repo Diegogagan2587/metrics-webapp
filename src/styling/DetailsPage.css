@@ -1,0 +1,52 @@
+.bold{
+    font-weight: bolder;
+}
+
+.state {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  padding: 2.5%;
+  height: 45vmin;
+}
+
+.state img {
+  width: 45%;
+}
+
+.state .state-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 50%;
+  font-size: 85%;
+}
+
+.data {
+  background-color: #e04983;
+}
+
+.state-h2 {
+  font-size: 100%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-list li:nth-child(odd) {
+    background-color: #f04c8c;
+}
+
+.data-list li {
+    display: flex;
+    height: 20vw;
+    font-size: 150%;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+}
