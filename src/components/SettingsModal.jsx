@@ -1,5 +1,5 @@
 import '../styling/SettingsModal.css'
-import {useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { closeModal, updateNumberOfCities } from '../redux/navigation/navigationSlice';
 const SettingsModal = () => {
     const dispatch = useDispatch();
