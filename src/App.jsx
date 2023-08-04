@@ -18,7 +18,7 @@ function App() {
       const { latitude, longitude } = state;
       dispatch(getWeatherAsync({ latitude, longitude }));
     });
-  }, [useDispatch]);
+  }, [dispatch,statesInCountry]);
 
   return (
     <>
