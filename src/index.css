@@ -1,4 +1,5 @@
 /* General Styling here */
+
 /* Background color: #e04484 */
 
 * {
@@ -7,8 +8,8 @@
   margin: 0;
 }
 
-body{
-  background-color: #f04c8c; /*remove after finishing styling*/
+body {
+  background-color: #f04c8c; /* remove after finishing styling */
 }
 
 ul {

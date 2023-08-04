@@ -1,5 +1,5 @@
-.bold{
-    font-weight: bolder;
+.bold {
+  font-weight: bolder;
 }
 
 .state {
@@ -8,7 +8,6 @@
   gap: 5%;
   padding: 2.5%;
   min-height: 45vmin;
-  height: fit-content;
 }
 
 .state img {
@@ -35,20 +34,20 @@
 }
 
 .data-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.data-list li:nth-child(odd) {
-    background-color: #f04c8c;
+  display: flex;
+  flex-direction: column;
 }
 
 .data-list li {
-    display: flex;
-    height: 20vw;
-    font-size: 150%;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 2.5%;
-    padding-left: 2.5%;
+  display: flex;
+  height: 20vw;
+  font-size: 150%;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+}
+
+.data-list li:nth-child(odd) {
+  background-color: #f04c8c;
 }

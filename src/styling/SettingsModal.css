@@ -1,62 +1,62 @@
 .modal-background {
-    border: 1px solid green;
-    position:fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(128, 128, 128, 0.411);
-    backdrop-filter: blur(8px);
-    height: 100vh;
-    width: 100vw;
-    padding: 5%;
+  border: 1px solid green;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.411);
+  backdrop-filter: blur(8px);
+  height: 100vh;
+  width: 100vw;
+  padding: 5%;
 }
 
 .modal {
-    color: whitesmoke;
-    background-color: #e04983;
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    width: 100%;
-    padding: 5%;
-    border-radius: 10px;
+  color: whitesmoke;
+  background-color: #e04983;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  width: 100%;
+  padding: 5%;
+  border-radius: 10px;
 }
 
 .modal .close-mod {
-    background-color: inherit;
-    width: fit-content;
-    align-self: flex-end;
-    justify-self:flex-end;
-    font-size: 5vmin;
-    font-weight: bold;
+  background-color: inherit;
+  width: fit-content;
+  align-self: flex-end;
+  justify-self: flex-end;
+  font-size: 5vmin;
+  font-weight: bold;
 }
 
 .modal .close-mod:hover {
-    background-color:  #dd1360;
-    border-radius: 3.5px;
-    width: fit-content;
-    align-self: flex-end;
-    font-size: 5vmin;
-    font-weight: bold;
-    
+  background-color: #dd1360;
+  border-radius: 3.5px;
+  width: fit-content;
+  align-self: flex-end;
+  font-size: 5vmin;
+  font-weight: bold;
 }
 
 .modal form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vmin;
 }
 
 .modal form input {
-    color:  #dd1360;
-    width: 20%;
+  color: #dd1360;
+  width: 20%;
 }
 
 .modal form button {
-    background-color: inherit;
-    color: whitesmoke;
-    width: fit-content;
+  background-color: inherit;
+  color: whitesmoke;
+  width: fit-content;
 }
+
 .modal form button:hover {
-    background-color:  #dd1360;
+  background-color: #dd1360;
 }

@@ -24,12 +24,11 @@ nav ul button {
 
 nav ul .go-back {
   font-weight: bold;
-  
 }
 
 nav ul .icons-right {
   width: 14%;
   display: flex;
   justify-content: space-between;
-  gap:2%;
+  gap: 2%;
 }

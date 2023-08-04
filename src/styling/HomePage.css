@@ -1,52 +1,53 @@
 .continent {
-    display: flex;
-    align-items: center;
-    gap: 5%;
-    background-color: #fc5498;
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  background-color: #fc5498;
 }
 
 .continent img {
-    width: 45%;
+  width: 45%;
 }
 
-.continent .cont-header{
-    width: 45%;
+.continent .cont-header {
+  width: 45%;
 }
+
 /* countries section */
 .countries-section {
-    background-color: #e04983;
+  background-color: #e04983;
 }
 
 .countries-section h2 {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 .countries-ul {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #fc5498;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fc5498;
 }
 
 .countries-ul .country {
-    flex-basis: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 2.5%;
-    font-size: 80%;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 2.5%;
+  font-size: 80%;
 }
 
 .countries-ul .country:nth-child(3n+2),
-.countries-ul .country:nth-child(3n+3)  {
-    background-color: #e04983;
+.countries-ul .country:nth-child(3n+3) {
+  background-color: #e04983;
 }
 
 .countries-ul .country:nth-child(3n+4),
-.countries-ul .country:nth-child(3n+5)  {
-    background-color: inherit;
+.countries-ul .country:nth-child(3n+5) {
+  background-color: inherit;
 }
 
 .country img {
-    width: 100%;
-    position: static;
+  width: 100%;
+  position: static;
 }
