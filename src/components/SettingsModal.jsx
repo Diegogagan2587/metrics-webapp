@@ -3,7 +3,6 @@ import {useSelector, useDispatch } from 'react-redux';
 import { closeModal, updateNumberOfCities } from '../redux/navigation/navigationSlice';
 const SettingsModal = () => {
     const dispatch = useDispatch();
-    const isModalOPen = useSelector((state)=>state.navigaton[0].isModalOpen);
     const setCloseModal = ()=>{
         dispatch(closeModal())
     }
