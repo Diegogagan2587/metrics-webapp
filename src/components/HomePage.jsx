@@ -12,10 +12,10 @@ const HomePage = () => {
     const result = []
     const cities = state.weather.mexico.states
     if (numOfCitiesFromStore) {
-      if ( numOfCitiesFromStore > cities.length) {return cities};
+      if ( numOfCitiesFromStore > cities.length) {return cities}
       for(let i = 0; i<numOfCitiesFromStore; i++) {
         result.push(cities[i]);
-      };
+      }
       return result;
     }
     return cities;
