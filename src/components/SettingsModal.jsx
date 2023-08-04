@@ -12,13 +12,14 @@ const SettingsModal = () => {
         const numberFromUser = event.target.querySelector('.modal-input').value;
         console.log(numberFromUser);
         dispatch(updateNumberOfCities(numberFromUser))
+        dispatch(closeModal());
     }
     return (
         <div className="modal-background hide">
             <div className='modal'>
             <button className="close-mod" onClick={()=>setCloseModal()}>X</button>
             <form onSubmit={(event)=>handleSubmit(event)}>
-                <p>How many states do you want to display?</p>
+                <p>How many cities do you want to display?</p>
                 <input type="text" name="modal-input" id="modal-input" className='modal-input'/>
                 <button type="submit">Change</button>
             </form>
