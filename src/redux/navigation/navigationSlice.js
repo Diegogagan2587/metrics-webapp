@@ -12,11 +12,11 @@ const navigationSlice = createSlice({
     reducers: {
         openModal: (state,action)=>{
             const newState = { isModalOpen: true };
-            state.splice(0,state.length-1,newState);
+            state.splice(0,state.length,newState);
         },
         closeModal: (state,action)=>{
             const newState = {isModalOpen: false};
-            state.splice(0,state.length-1, newState);
+            state.splice(0,state.length, newState);
         },
     }
 })
