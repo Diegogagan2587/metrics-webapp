@@ -20,8 +20,7 @@ const HomePage = () => {
     }
     return cities;
   });
-  console.log('statesInCountry-------->',statesInCountry);
-
+  
   const eventHandler = (cityName) => {
     dispatch(updateSelected(cityName));
   };
