@@ -5,9 +5,6 @@ import { updateSelected } from '../redux/details/detailsSlice';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import map_mexico from '../assets/map_mexico.png'
 
-const continentsURL =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Continental_models-Australia.gif/1280px-Continental_models-Australia.gif';
-
 const HomePage = () => {
   const dispatch = useDispatch();
   const numOfCitiesFromStore = useSelector((state)=>state.navigaton[0].citiesToRender);
