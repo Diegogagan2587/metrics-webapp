@@ -7,7 +7,7 @@ const store = configureStore({
   reducer: {
     weather: weatherReducer,
     details: detailsReducer,
-    navigaton: navigationReducer,
+    navigation: navigationReducer,
   },
 });
 
