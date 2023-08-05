@@ -7,10 +7,37 @@ import NavigationBar from '../components/NavigationBar';
 import DetailsPage from '../components/DetailsPage';
 import HomePage from '../components/HomePage';
 import SettingsModal from '../components/SettingsModal';
-import store from '../redux/store';
+// import store from '../redux/store';
 import navigationReducer from '../redux/navigation/navigationSlice';
 jest.mock('../assets/mapMexico.png');
 const mockStore = configureStore([]);
+const initialState = {
+  weather: {
+    mexico: {
+      states: [
+        {
+          state: 'VILLAHERMOSA',
+          latitude: 17,
+          longitude: 92,
+          data: null,
+          img: 'test',
+          imgAlt: 'Map of Tabasco',
+        },
+        {
+          state: 'CANCUN',
+          latitude: 21,
+          longitude: -86,
+          data: null,
+          img: 'test',
+          imgAlt: 'Map of Tabasco',
+        },
+      ],
+    },
+  },
+  navigation: [{ isModalOpen: false, citiesToRender: 'VILLAHERMOSA' }],
+};
+
+const store = mockStore(initialState);
 
   describe('Test Components', () => {
     describe('Test HomePage Component', () => {

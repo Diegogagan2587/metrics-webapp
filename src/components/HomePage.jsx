@@ -10,7 +10,7 @@ import mapMexico from '../assets/mapMexico.png';
 const HomePage = () => {
   const dispatch = useDispatch();
   const numOfCitiesFromStore = useSelector(
-    (state) => state.navigaton[0].citiesToRender
+    (state) => state.navigation[0].citiesToRender
   );
   const statesInCountry = useSelector((state) => {
     const result = [];
