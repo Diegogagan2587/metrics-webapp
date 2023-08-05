@@ -37,7 +37,7 @@ const HomePage = () => {
         <img src={mapMexico} alt="country picture" />
         <div className="cont-header">
           <h1>Mexico</h1>
-          <span>6958 views</span>
+          <span>America</span>
         </div>
       </section>
       <section className="countries-section">
