@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineReducers } from '@reduxjs/toolkit';
 import { BrowserRouter } from 'react-router-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
@@ -6,8 +7,11 @@ import configureStore from 'redux-mock-store';
 import NavigationBar from '../components/NavigationBar';
 import DetailsPage from '../components/DetailsPage';
 import HomePage from '../components/HomePage';
-import navigationReducer from '../redux/navigation/navigationSlice';
+import { openModal } from '../redux/navigation/navigationSlice';
 jest.mock('../assets/mapMexico.png');
+const rootReducer = combineReducers({
+  openModal,
+})
 const mockStore = configureStore([]);
 const initialState = {
   weather: {
@@ -44,60 +48,59 @@ const initialState = {
   details: [
     {
       selected: 'VILLAHERMOSA',
-    }
-  ]
+    },
+  ],
 };
 
-const store = mockStore(initialState);
+const store = mockStore(initialState,rootReducer);
 
-  describe('Test Components', () => {
-    describe('Test HomePage Component', () => {
-      test('HomePage should render Mexico', () => {
-        render(
-          <BrowserRouter>
-            <Provider store={store}>
-              <HomePage />
-            </Provider>
-          </BrowserRouter>
-        );
-        const mexico = screen.getByText('Mexico');
-        expect(mexico).toBeInTheDocument();
-      });
-
-      test('HomePage should render at least 1 picture', () => {
-        render(
-          <BrowserRouter>
-            <Provider store={store}>
-              <HomePage />
-            </Provider>
-          </BrowserRouter>
-        );
-
-        // Find all the img elements
-        const images = screen.queryAllByRole('img');
-
-        // Check if there is at least one image
-        expect(images.length).toBeGreaterThan(0);
-      });
-    });
-
-    describe('Test NavigationBar Component', () => {
-      test('NavigationBar should render "Now" and setting button should be present', () => {
-        render(
+describe('Test Components', () => {
+  describe('Test HomePage Component', () => {
+    test('HomePage should render Mexico', () => {
+      render(
+        <BrowserRouter>
           <Provider store={store}>
-            <BrowserRouter>
-              <NavigationBar />
-            </BrowserRouter>
+            <HomePage />
           </Provider>
-        );
-        const nowElement = screen.getByText('Go Back');
-        expect(nowElement).toBeInTheDocument;
-        
-      });
+        </BrowserRouter>
+      );
+      const mexico = screen.getByText('Mexico');
+      expect(mexico).toBeInTheDocument();
     });
-/*
+
+    test('HomePage should render at least 1 picture', () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <HomePage />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      // Find all the img elements
+      const images = screen.queryAllByRole('img');
+
+      // Check if there is at least one image
+      expect(images.length).toBeGreaterThan(0);
+    });
+  });
+
+  describe('Test NavigationBar Component', () => {
+    test('NavigationBar should render "Go Back" and setting button should be present', () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <NavigationBar />
+          </BrowserRouter>
+        </Provider>
+      );
+      const nowElement = screen.getByText('Go Back');
+      expect(nowElement).toBeInTheDocument;
+    });
+  });
+  
     describe('Test for Details Page', ()=> {
-      test('DetailsPage should render state and air quality', () => {
+      test('DetailsPage should render VILLAHERMOSA and Air Quality', () => {
         const store = mockStore(initialState);
         render(
           <Provider store={store}>
@@ -108,9 +111,8 @@ const store = mockStore(initialState);
         const stateNameElement = screen.getByText('VILLAHERMOSA');
         expect(stateNameElement).toBeInTheDocument();
       
-        const airQualityElement = screen.getByText('Air Quality');
+        const airQualityElement = screen.getByText(/Air Quality/i);
         expect(airQualityElement).toBeInTheDocument();
       });
-    })*/
-    
-  });
+    })
+});
