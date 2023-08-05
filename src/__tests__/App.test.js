@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { combineReducers } from '@reduxjs/toolkit';
 import { BrowserRouter } from 'react-router-dom';
