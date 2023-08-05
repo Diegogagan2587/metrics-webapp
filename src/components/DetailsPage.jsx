@@ -1,5 +1,6 @@
 import '../styling/DetailsPage.css'
 import { useSelector } from 'react-redux';
+import translateAirQualityFrom from './translateAirQualityFrom';
 
 const DetailsPage = () => {
   const cities = useSelector((state) => state.weather.mexico.states);
@@ -8,13 +9,14 @@ const DetailsPage = () => {
   const { state:name, img} = currentCityData[0];
   console.log('detailsPage is receiving---->', name)
   const {components:polutionStats} = currentCityData[0].data[0];
+  const { aqi:airQuality } = currentCityData[0].data[0].main;
   return (
     <div className='details-section'>
       <section className="state">
         <img src={img} alt="state picture" />
         <div className="state-header">
           <h1>{name}</h1>
-          <span>6958 views</span>
+          <span>{`Air Quality: ${translateAirQualityFrom(airQuality)}`}</span>
         </div>
       </section>
       <section className='data'>
