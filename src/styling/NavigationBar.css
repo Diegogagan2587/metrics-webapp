@@ -22,8 +22,14 @@ nav ul button {
   padding: 0;
 }
 
+.go-back-container {
+  display: flex;
+  font-weight: bolder;
+}
+
 nav ul .go-back {
   font-weight: bold;
+  font-size: 100%;
 }
 
 nav ul .icons-right {

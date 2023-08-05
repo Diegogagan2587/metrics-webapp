@@ -17,7 +17,7 @@ const NavigationBar = () => {
   return (
     <nav>
       <ul>
-        <li>
+        <li className='go-back-container'>
           <button className='go-back'><NavLink to="./home"> <AiOutlineLeft /> </NavLink></button> <span>Go Back</span>
         </li>
         <li>most views</li>
