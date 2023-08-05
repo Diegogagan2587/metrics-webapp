@@ -1,9 +1,10 @@
 import '../styling/HomePage.css';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { updateSelected } from '../redux/details/detailsSlice';
 import { BsArrowRightCircle } from 'react-icons/bs';
-import map_mexico from '../assets/map_mexico.png'
+import mapMexico from '../assets/mapMexico.png';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const HomePage = () => {
   return (
     <>
       <section className="continent">
-        <img src={map_mexico} alt="continents picture" />
+        <img src={mapMexico} alt="country picture" />
         <div className="cont-header">
           <h1>Mexico</h1>
           <span>6958 views</span>
