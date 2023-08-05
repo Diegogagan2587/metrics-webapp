@@ -3,28 +3,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { updateSelected } from '../redux/details/detailsSlice';
+import translateAirQualityFrom from './translateAirQualityFrom';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import mapMexico from '../assets/mapMexico.png';
-
-const translateAirQualityFrom = (number) => {
-  switch (number) {
-    case 1:
-      return 'Good';
-      break;
-    case 2:
-      return 'Fair';
-      break;
-    case 3:
-      return 'Moderate';
-      break;
-    case 4:
-      return 'Poor';
-      break;
-    case 5:
-      return 'Very Poor';
-      break;
-  }
-};
 
 const HomePage = () => {
   const dispatch = useDispatch();
