@@ -1,4 +1,5 @@
 const translateAirQualityFrom = (number) => {
+  if(!number) return  'notFound';
     switch (number) {
       case 1:
         return 'Good';
