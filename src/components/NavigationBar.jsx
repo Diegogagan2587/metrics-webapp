@@ -1,4 +1,5 @@
 import '../styling/NavigationBar.css';
+import React from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { AiTwotoneSetting, AiOutlineLeft } from 'react-icons/ai';
 import { BiSolidMicrophone } from 'react-icons/bi';
@@ -21,7 +22,7 @@ const NavigationBar = () => {
         <li>most views</li>
         <li className='icons-right'>
         <BiSolidMicrophone />
-          <button onClick={()=>setOpenModal()}>
+          <button data-testid="settings-button" onClick={()=>setOpenModal()}>
             <AiTwotoneSetting />
           </button>
         </li>
