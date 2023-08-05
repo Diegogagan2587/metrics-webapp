@@ -9,7 +9,7 @@ import { openModal } from '../redux/navigation/navigationSlice';
 
 const NavigationBar = () => {
   const dispatch = useDispatch();
-  const isModalOpen = useSelector((state)=>state.navigaton[0].isModalOpen);
+  const isModalOpen = useSelector((state)=>state.navigation[0].isModalOpen);
   const setOpenModal = ()=> {
     dispatch(openModal());
   }
