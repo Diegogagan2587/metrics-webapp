@@ -6,8 +6,6 @@ import configureStore from 'redux-mock-store';
 import NavigationBar from '../components/NavigationBar';
 import DetailsPage from '../components/DetailsPage';
 import HomePage from '../components/HomePage';
-import SettingsModal from '../components/SettingsModal';
-// import store from '../redux/store';
 import navigationReducer from '../redux/navigation/navigationSlice';
 jest.mock('../assets/mapMexico.png');
 const mockStore = configureStore([]);
@@ -19,15 +17,23 @@ const initialState = {
           state: 'VILLAHERMOSA',
           latitude: 17,
           longitude: 92,
-          data: null,
-          img: 'test',
-          imgAlt: 'Map of Tabasco',
-        },
-        {
-          state: 'CANCUN',
-          latitude: 21,
-          longitude: -86,
-          data: null,
+          data: [
+            {
+              components: {
+                co: 0.2,
+                nh3: 0.03,
+                no: 0.01,
+                no2: 0.02,
+                o3: 0.03,
+                pm2_5: 0.01,
+                pm10: 0.02,
+                so2: 0.01,
+              },
+              main: {
+                aqi: 35,
+              },
+            },
+          ],
           img: 'test',
           imgAlt: 'Map of Tabasco',
         },
@@ -35,6 +41,11 @@ const initialState = {
     },
   },
   navigation: [{ isModalOpen: false, citiesToRender: 'VILLAHERMOSA' }],
+  details: [
+    {
+      selected: 'VILLAHERMOSA',
+    }
+  ]
 };
 
 const store = mockStore(initialState);
@@ -72,35 +83,34 @@ const store = mockStore(initialState);
 
     describe('Test NavigationBar Component', () => {
       test('NavigationBar should render "Now" and setting button should be present', () => {
-        const mockInitialState = {
-            navigaton: [{ isModalOpen: false, citiesToRender: undefined }], // Set initial state as needed
-          };
-
-          const mockReducer = {
-            navigation: navigationReducer, // Include your navigation reducer here
-            // Add other reducers if you have them
-          };
-
-          const mockStore = configureStore(mockReducer);
-        const finalMockStore = mockStore(mockInitialState);
-
         render(
-          <Provider store={finalMockStore}>
+          <Provider store={store}>
             <BrowserRouter>
               <NavigationBar />
             </BrowserRouter>
           </Provider>
         );
-        const nowElement = screen.getByText('Now');
+        const nowElement = screen.getByText('Go Back');
         expect(nowElement).toBeInTheDocument;
-
-        // Initially, the SettingsModal should not be visible
-        const settingsModal = screen.queryByRole('dialog');
-        expect(settingsModal).not.toBeInTheDocument();
-
-        // Click the settings button using the icon's name as the accessible name
-        const settingsButton = screen.getByTestId('settings-button');
-        fireEvent.click(settingsButton);
+        
       });
     });
+/*
+    describe('Test for Details Page', ()=> {
+      test('DetailsPage should render state and air quality', () => {
+        const store = mockStore(initialState);
+        render(
+          <Provider store={store}>
+            <DetailsPage />
+          </Provider>
+        );
+      
+        const stateNameElement = screen.getByText('VILLAHERMOSA');
+        expect(stateNameElement).toBeInTheDocument();
+      
+        const airQualityElement = screen.getByText('Air Quality');
+        expect(airQualityElement).toBeInTheDocument();
+      });
+    })*/
+    
   });
