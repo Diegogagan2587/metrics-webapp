@@ -45,7 +45,8 @@ const HomePage = () => {
         <ul className="countries-ul">
           {statesInCountry.map((currentCity) => {
             const { latitude, longitude, state: cityName } = currentCity;
-            const  airQuality  = currentCity.data[0].main.aqi;
+            const airQuality = currentCity?.data?.[0]?.main?.aqi || null;
+
  
             return (
               <li key={currentCity.state} className="country">
