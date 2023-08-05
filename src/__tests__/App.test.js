@@ -12,9 +12,6 @@ import navigationReducer from '../redux/navigation/navigationSlice';
 jest.mock('../assets/mapMexico.png');
 const mockStore = configureStore([]);
 
-test('this is just a test for testing enviroment', () => {
-  expect(2 + 2).toBe(4);
-}),
   describe('Test Components', () => {
     describe('Test HomePage Component', () => {
       test('HomePage should render Mexico', () => {
