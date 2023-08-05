@@ -1,4 +1,5 @@
 import '../styling/DetailsPage.css'
+import React from 'react';
 import { useSelector } from 'react-redux';
 import translateAirQualityFrom from './translateAirQualityFrom';
 
