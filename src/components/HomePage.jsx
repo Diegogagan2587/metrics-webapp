@@ -6,22 +6,47 @@ import { updateSelected } from '../redux/details/detailsSlice';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import mapMexico from '../assets/mapMexico.png';
 
+const translateAirQualityFrom = (number) => {
+  switch (number) {
+    case 1:
+      return 'Good';
+      break;
+    case 2:
+      return 'Fair';
+      break;
+    case 3:
+      return 'Moderate';
+      break;
+    case 4:
+      return 'Poor';
+      break;
+    case 5:
+      return 'Very Poor';
+      break;
+  }
+};
+
 const HomePage = () => {
   const dispatch = useDispatch();
-  const numOfCitiesFromStore = useSelector((state)=>state.navigaton[0].citiesToRender);
+  const numOfCitiesFromStore = useSelector(
+    (state) => state.navigaton[0].citiesToRender
+  );
   const statesInCountry = useSelector((state) => {
-    const result = []
-    const cities = state.weather.mexico.states
+    const result = [];
+    const cities = state.weather.mexico.states;
     if (numOfCitiesFromStore) {
-      if ( numOfCitiesFromStore > cities.length) {return cities}
-      for(let i = 0; i<numOfCitiesFromStore; i++) {
+      if (numOfCitiesFromStore > cities.length) {
+        return cities;
+      }
+      for (let i = 0; i < numOfCitiesFromStore; i++) {
         result.push(cities[i]);
       }
+      console.log('states in coutnry =', result);
       return result;
     }
     return cities;
   });
-  
+
   const eventHandler = (cityName) => {
     dispatch(updateSelected(cityName));
   };
@@ -39,17 +64,19 @@ const HomePage = () => {
         <h2>STATS BY CITY</h2>
         <ul className="countries-ul">
           {statesInCountry.map((state) => {
-            const { latitude, longitude, state:cityName} = state;
+            const { latitude, longitude, state: cityName } = state;
+            const { aqi: airQualityNumber } = state.data[0].main;
             return (
               <li key={state.state} className="country">
-                <NavLink to="/details" onClick={()=>eventHandler(cityName)}>
+                <NavLink to="/details" onClick={() => eventHandler(cityName)}>
                   <BsArrowRightCircle />
                 </NavLink>
                 <img src={state.img} alt={state.imgAlt} />
-                <NavLink to="/details" onClick={()=>eventHandler(cityName)}>
-                  <h3 className='city-name'>{cityName}</h3>
+                <NavLink to="/details" onClick={() => eventHandler(cityName)}>
+                  <h3 className="city-name">{cityName}</h3>
                 </NavLink>
                 <span>{`coords: Lat${latitude}, Long${longitude}`}</span>
+                <span>{`Air Quality: ${translateAirQualityFrom(airQualityNumber)}`}</span>
               </li>
             );
           })}
