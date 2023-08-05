@@ -22,7 +22,6 @@ const HomePage = () => {
       for (let i = 0; i < numOfCitiesFromStore; i++) {
         result.push(cities[i]);
       }
-      console.log('states in coutnry =', result);
       return result;
     }
     return cities;
@@ -44,20 +43,21 @@ const HomePage = () => {
       <section className="countries-section">
         <h2>STATS BY CITY</h2>
         <ul className="countries-ul">
-          {statesInCountry.map((state) => {
-            const { latitude, longitude, state: cityName } = state;
-            const { aqi: airQualityNumber } = state.data[0].main;
+          {statesInCountry.map((currentCity) => {
+            const { latitude, longitude, state: cityName } = currentCity;
+            const  airQuality  = currentCity.data[0].main.aqi;
+ 
             return (
-              <li key={state.state} className="country">
+              <li key={currentCity.state} className="country">
                 <NavLink to="/details" onClick={() => eventHandler(cityName)}>
                   <BsArrowRightCircle />
                 </NavLink>
-                <img src={state.img} alt={state.imgAlt} />
+                <img src={currentCity.img} alt={currentCity.imgAlt} />
                 <NavLink to="/details" onClick={() => eventHandler(cityName)}>
                   <h3 className="city-name">{cityName}</h3>
                 </NavLink>
                 <span>{`coords: Lat${latitude}, Long${longitude}`}</span>
-                <span>{`Air Quality: ${translateAirQualityFrom(airQualityNumber)}`}</span>
+                <span>{`Air Quality: ${translateAirQualityFrom(airQuality)}`}</span>
               </li>
             );
           })}
