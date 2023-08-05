@@ -9,23 +9,24 @@ import mapMexico from '../assets/mapMexico.png';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const selectCitiesToRender = useSelector(
-    (state) => state.navigation[0].citiesToRender
-  );
-  const statesInCountry = useSelector((state) => {
+  const citiesToRender = useSelector((state) => state.navigation[0].citiesToRender);
+  const cities = useSelector((state)=>state.weather.mexico.states);
+
+  const getStatesInCountry = () => {
     const result = [];
-    const cities = state.weather.mexico.states;
-    if (selectCitiesToRender) {
-      if (selectCitiesToRender > cities.length) {
+    if (citiesToRender) {
+      if (citiesToRender > cities.length) {
         return cities;
       }
-      for (let i = 0; i < selectCitiesToRender; i++) {
+      for (let i = 0; i < citiesToRender; i++) {
         result.push(cities[i]);
       }
       return result;
     }
     return cities;
-  });
+  };
+
+  const statesInCountry = getStatesInCountry();
 
   const eventHandler = (cityName) => {
     dispatch(updateSelected(cityName));
