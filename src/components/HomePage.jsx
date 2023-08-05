@@ -9,17 +9,17 @@ import mapMexico from '../assets/mapMexico.png';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const numOfCitiesFromStore = useSelector(
+  const selectCitiesToRender = useSelector(
     (state) => state.navigation[0].citiesToRender
   );
   const statesInCountry = useSelector((state) => {
     const result = [];
     const cities = state.weather.mexico.states;
-    if (numOfCitiesFromStore) {
-      if (numOfCitiesFromStore > cities.length) {
+    if (selectCitiesToRender) {
+      if (selectCitiesToRender > cities.length) {
         return cities;
       }
-      for (let i = 0; i < numOfCitiesFromStore; i++) {
+      for (let i = 0; i < selectCitiesToRender; i++) {
         result.push(cities[i]);
       }
       return result;
