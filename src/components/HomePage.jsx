@@ -1,5 +1,4 @@
 import '../styling/HomePage.css';
-// eslint-disable-next-line
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';

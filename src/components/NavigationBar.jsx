@@ -1,5 +1,4 @@
 import '../styling/NavigationBar.css';
-// eslint-disable-next-line
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { AiTwotoneSetting, AiOutlineLeft } from 'react-icons/ai';
