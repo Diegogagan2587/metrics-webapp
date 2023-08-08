@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [{
-    selected: "",
+  selected: '',
 }];
 
 const detailsSlice = createSlice({
-    name: 'details',
-    initialState,
-    reducers: {
-        updateSelected: (state, action) => {
-            state[0].selected = action.payload;
-        }
+  name: 'details',
+  initialState,
+  reducers: {
+    updateSelected: (state, action) => {
+      state[0].selected = action.payload;
     },
+  },
 });
 
 export const { updateSelected } = detailsSlice.actions;

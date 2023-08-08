@@ -1,1 +1,1 @@
-export default "mocked-mapMexico.png"
+export default 'mocked-mapMexico.png';

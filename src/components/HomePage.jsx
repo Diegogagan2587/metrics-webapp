@@ -3,15 +3,15 @@ import '../styling/HomePage.css';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import { updateSelected } from '../redux/details/detailsSlice';
 import translateAirQualityFrom from './translateAirQualityFrom';
-import { BsArrowRightCircle } from 'react-icons/bs';
 import mapMexico from '../assets/mapMexico.png';
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const citiesToRender = useSelector((state) => state.navigation[0].citiesToRender);
-  const cities = useSelector((state)=>state.weather.mexico.states);
+  const cities = useSelector((state) => state.weather.mexico.states);
 
   const getStatesInCountry = () => {
     const result = [];
@@ -49,7 +49,6 @@ const HomePage = () => {
             const { latitude, longitude, state: cityName } = currentCity;
             const airQuality = currentCity?.data?.[0]?.main?.aqi || null;
 
- 
             return (
               <li key={currentCity.state} className="country">
                 <NavLink to="/details" onClick={() => eventHandler(cityName)}>
