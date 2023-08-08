@@ -19,7 +19,7 @@ const HomePage = () => {
       if (citiesToRender > cities.length) {
         return cities;
       }
-      for (let i = 0; i < citiesToRender; i++) {
+      for (let i = 0; i < citiesToRender; i += 1) {
         result.push(cities[i]);
       }
       return result;
