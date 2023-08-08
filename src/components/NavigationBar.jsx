@@ -18,12 +18,12 @@ const NavigationBar = () => {
     <nav>
       <ul>
         <li className='go-back-container'>
-          <button className='go-back'><NavLink to="./home"> <AiOutlineLeft /> </NavLink></button> <span>Go Back</span>
+          <button type="button" className='go-back'><NavLink to="./home"> <AiOutlineLeft /> </NavLink></button> <span>Go Back</span>
         </li>
         <li>most views</li>
         <li className='icons-right'>
         <BiSolidMicrophone />
-          <button data-testid="settings-button" onClick={()=>setOpenModal()}>
+          <button type="button" data-testid="settings-button" onClick={()=>setOpenModal()}>
             <AiTwotoneSetting />
           </button>
         </li>
