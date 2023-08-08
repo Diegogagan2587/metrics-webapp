@@ -36,7 +36,7 @@ const HomePage = () => {
   return (
     <>
       <section className="continent">
-        <img src={mapMexico} alt="country picture" />
+        <img src={mapMexico} alt="country" />
         <div className="cont-header">
           <h1>Mexico</h1>
           <span>America</span>
