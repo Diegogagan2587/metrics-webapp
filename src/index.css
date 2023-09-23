@@ -1,0 +1,31 @@
+/* General Styling here */
+
+/* Background color: #e04484 */
+
+* {
+  box-sizing: border-box;
+  color: whitesmoke;
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-color: #f04c8c; /* remove after finishing styling */
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: 0;
+}

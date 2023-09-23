@@ -1,0 +1,40 @@
+.active-link {
+  border: green 1px solid;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  background-color: #e04983;
+  padding: 2.5%;
+}
+
+nav ul {
+  background-color: inherit;
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+nav ul button {
+  background-color: inherit;
+  padding: 0;
+}
+
+.go-back-container {
+  display: flex;
+  font-weight: bolder;
+}
+
+nav ul .go-back {
+  font-weight: bold;
+  font-size: 100%;
+}
+
+nav ul .icons-right {
+  width: 14%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+}
