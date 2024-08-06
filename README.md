@@ -34,15 +34,14 @@
 
 # 📖 Metrics webapp <a name="about-project"></a>
 
-> What is Metrics webapp?
+> What is Metrics Web App?
 
-**Metrics webapp** is a mobile web application that gets pollution data from [Air pollution API](https://openweathermap.org/api/air-pollution) on the first render and dislpay air quality value for 6 states within Mexico.
+**Metrics web app** is a mobile web application that gets pollution data from [Air pollution API](https://openweathermap.org/api/air-pollution) on the first render and dislpay air quality value for 6 states within Mexico.
 
-take a look on the next video:
+##### Take a look at the next video:
 
-https://www.youtube.com/watch?v=QkO_6bSDYl8
+[![image](https://github.com/user-attachments/assets/fb629869-adeb-4f2e-bd90-5157c4ab336e)](https://drive.google.com/file/d/1lnhZyktsUM33fHkORHxIQkteRCxmrvwC/view?usp=sharing)
 
-[![metrics-webapp](https://img.youtube.com/vi/QkO_6bSDYl8/0.jpg)](https://www.youtube.com/watch?v=QkO_6bSDYl8)
 
 
 ## 🛠 Built With <a name="built-with"></a>
